@@ -1,4 +1,4 @@
-# Project Checklist - Ödev Değerlendirme Kriterleri
+# Project Checklist 
 
 ## 1. Proper Implementation of CRUD Operations in Python Application
 
