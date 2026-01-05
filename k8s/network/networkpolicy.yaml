@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: bookstore-network-policy
+  namespace: bookstore
+spec:
+  podSelector:
+    matchLabels:
+      app: mongo
+  policyTypes:
+  - Ingress
+  ingress:
+  # Allow only bookstore-api pods to connect to MongoDB
+  - from:
+    - podSelector:
+        matchLabels:
+          app: bookstore-api
+    ports:
+    - protocol: TCP
+      port: 27017
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: bookstore-api-network-policy
+  namespace: bookstore
+spec:
+  podSelector:
+    matchLabels:
+      app: bookstore-api
+  policyTypes:
+  - Ingress
+  ingress:
+  # Allow inbound traffic to API pods on port 5000 from anywhere
+  # (LoadBalancer will route external traffic)
+  - ports:
+    - protocol: TCP
+      port: 5000
+
