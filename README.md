@@ -4,15 +4,51 @@ Full-stack web application with Flask REST API backend and vanilla JavaScript fr
 
 ## Live Demo
 
-**Application is currently deployed and accessible at:** `http://172.168.184.222`
+### Backend API (Live on AKS)
+**Deployed and accessible at:** `http://172.168.184.222`
 
-Available for testing for a limited time. Includes:
-- Complete CRUD operations
-- Azure Kubernetes Service deployment
-- RESTful API endpoints
-- Modern frontend interface
+Test the API:
+```bash
+# Health check
+curl http://172.168.184.222/health
 
-**Note:** For security reasons, the cluster will be decommissioned after the evaluation period.
+# Get all books
+curl http://172.168.184.222/books
+
+# Create a book
+curl -X POST http://172.168.184.222/books \
+  -H "Content-Type: application/json" \
+  -d '{
+    "isbn": "978-1234567890",
+    "title": "Test Book",
+    "year": 2026,
+    "price": 29.99,
+    "page": 300,
+    "category": "IT",
+    "coverPhoto": "images/test.jpg",
+    "publisher": {"id": 99, "name": "Test Publisher"},
+    "author": {"identityNo": "99", "firstName": "John", "lastName": "Doe"}
+  }'
+```
+
+### Frontend (Local Testing)
+The modern frontend interface can be tested locally:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/mjbagci/Db-Project-2
+cd Db-Project-2/frontend
+
+# 2. Start local server
+python3 -m http.server 8000
+
+# 3. Open in browser
+# http://localhost:8000
+```
+
+The frontend automatically connects to the live backend API at `http://172.168.184.222`.
+
+**Note:** For cost optimization, the frontend is not deployed on AKS. The cluster will be decommissioned after the evaluation period.
 
 ## Features
 
