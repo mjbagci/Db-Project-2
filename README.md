@@ -2,24 +2,27 @@
 
 Full-stack web application with Flask REST API backend and vanilla JavaScript frontend, connected to Azure Cosmos DB (MongoDB API).
 
-> **Note:** Due to Azure student account budget limitations ($100), the frontend is configured for local deployment while the backend API runs on AKS. This approach optimizes costs while maintaining full functionality.
+> **Note:** Hocam, Due to Azure student account budget limitations ($100), the frontend is configured for local deployment while the backend API runs on AKS. This approach optimizes costs while maintaining full functionality.
 
 **Quick Access:**
-- Backend API: `http://172.168.184.222`
-- Health Check: `http://172.168.184.222/health`
-- Books Endpoint: `http://172.168.184.222/books`
+- Backend API: http://172.168.184.222
+- Health Check: http://172.168.184.222/health
+- Books Endpoint: http://172.168.184.222/books
 
+- Backend Run
+Runs on http://localhost:5001
 **Local Testing:**
 ```bash
 # Terminal 1 - Backend
 cd app
 python3 app.py
-# Runs on http://localhost:5001
-
+```
+- Backend Run
+Runs on http://localhost:8000
+```bash
 # Terminal 2 - Frontend
 cd frontend
 python3 -m http.server 8000
-# Runs on http://localhost:8000
 ```
 
 ## Live Demo
