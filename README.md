@@ -9,12 +9,9 @@ Full-stack web application with Flask REST API backend and vanilla JavaScript fr
 - Health Check: http://172.168.184.222/health
 - Books Endpoint: http://172.168.184.222/books
 
-
-- Backend Run
+- Backend 
 Runs on http://localhost:5001
-
-
-- Frontends Run
+- Frontends
 Runs on http://localhost:8000
 
 
