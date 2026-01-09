@@ -13,19 +13,10 @@ Full-stack web application with Flask REST API backend and vanilla JavaScript fr
 - Backend Run
 Runs on http://localhost:5001
 
-**Local Testing:**
-```bash
-# Terminal 1 - Backend
-cd app
-python3 app.py
-```
-- Backend Run
+
+- Frontends Run
 Runs on http://localhost:8000
-```bash
-# Terminal 2 - Frontend
-cd frontend
-python3 -m http.server 8000
-```
+
 
 ## Live Demo
 
