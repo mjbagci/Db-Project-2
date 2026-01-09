@@ -1,8 +1,11 @@
 // ===== Configuration =====
-// Automatically detect backend URL
-const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:5001'
-    : 'http://172.168.184.222';
+// Always use Azure backend for testing
+const API_BASE_URL = 'http://172.168.184.222';
+
+// Alternative: Auto-detect (uncomment to use local backend when testing locally)
+// const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+//     ? 'http://localhost:5001'
+//     : 'http://172.168.184.222';
 
 // ===== State =====
 let allBooks = [];
