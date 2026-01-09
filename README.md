@@ -2,6 +2,18 @@
 
 Full-stack web application with Flask REST API backend and vanilla JavaScript frontend, connected to Azure Cosmos DB (MongoDB API).
 
+## Live Demo
+
+**Application is currently deployed and accessible at:** `http://172.168.184.222`
+
+Available for testing for a limited time. Includes:
+- Complete CRUD operations
+- Azure Kubernetes Service deployment
+- RESTful API endpoints
+- Modern frontend interface
+
+**Note:** For security reasons, the cluster will be decommissioned after the evaluation period.
+
 ## Features
 
 - RESTful API with full CRUD operations
