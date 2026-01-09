@@ -1,5 +1,8 @@
 // ===== Configuration =====
-const API_BASE_URL = 'http://localhost:5001';
+// Automatically detect backend URL
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:5001'
+    : 'http://172.168.184.222';
 
 // ===== State =====
 let allBooks = [];
