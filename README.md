@@ -5,16 +5,21 @@ Full-stack web application with Flask REST API backend and vanilla JavaScript fr
 > **Note:** Hocam, Due to Azure student account budget limitations ($100), the frontend is configured for local deployment while the backend API runs on AKS. This approach optimizes costs while maintaining full functionality.
 
 **Quick Access:**
-- Backend API: http://172.168.184.222
-- Health Check: http://172.168.184.222/health
-- Books Endpoint: http://172.168.184.222/books
+- **Live Frontend:** https://mjbagci.github.io/Db-Project-2/
+- **Backend API:** http://172.168.184.222
+- **Health Check:** http://172.168.184.222/health
+- **Books Endpoint:** http://172.168.184.222/books
 
 **Local Testing:**
 - Backend: http://localhost:5001
 - Frontend: http://localhost:8000
 
-
 ## Live Demo
+
+### Frontend (Live on GitHub Pages)
+**Access the application:** https://mjbagci.github.io/Db-Project-2/
+
+The frontend automatically connects to the live backend API. No installation required!
 
 ### Backend API (Live on AKS)
 **Deployed and accessible at:** `http://172.168.184.222`
