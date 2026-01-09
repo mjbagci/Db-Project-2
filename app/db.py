@@ -37,7 +37,11 @@ def get_client():
     global _client
     if _client is None:
         mongo_uri = get_mongo_uri()
-        _client = MongoClient(mongo_uri)
+        # SSL settings for Azure Cosmos DB
+        _client = MongoClient(
+            mongo_uri,
+            tlsAllowInvalidCertificates=True  # For development only
+        )
     return _client
 
 

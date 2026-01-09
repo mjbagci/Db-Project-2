@@ -2,6 +2,7 @@
 Flask REST API for BOOKSTORE database on Azure Cosmos DB (MongoDB API)
 """
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from bson import ObjectId
 from bson.errors import InvalidId
 from werkzeug.exceptions import BadRequest
@@ -10,6 +11,7 @@ from db import get_db, get_collection
 from models import Book
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 
 @app.route('/', methods=['GET'])
@@ -59,18 +61,29 @@ def create_book():
             return jsonify({'error': 'No JSON data provided'}), 400
         
         # Validate required fields
-        required_fields = ['title', 'author', 'isbn']
+        required_fields = ['isbn', 'title', 'author', 'publisher']
         for field in required_fields:
             if field not in data:
                 return jsonify({'error': f'Missing required field: {field}'}), 400
         
+        # Validate author object
+        if not isinstance(data.get('author'), dict):
+            return jsonify({'error': 'author must be an object with identityNo, firstName, lastName'}), 400
+        
+        # Validate publisher object
+        if not isinstance(data.get('publisher'), dict):
+            return jsonify({'error': 'publisher must be an object with id and name'}), 400
+        
         book = Book(
-            title=data['title'],
-            author=data['author'],
             isbn=data['isbn'],
+            title=data['title'],
+            year=data.get('year'),
             price=data.get('price'),
-            stock=data.get('stock', 0),
-            description=data.get('description')
+            page=data.get('page'),
+            category=data.get('category', 'Uncategorized'),
+            cover_photo=data.get('coverPhoto', ''),
+            publisher=data['publisher'],
+            author=data['author']
         )
         
         collection = get_collection()
