@@ -1,8 +1,10 @@
-# Bookstore API - Cloud-Native Full-Stack Application
+# Bookstore API
 
-Full-stack web application with Flask REST API backend and vanilla JavaScript frontend, connected to Azure Cosmos DB (MongoDB API) and deployed on Azure Kubernetes Service (AKS).
+Full-stack web application with Flask REST API backend and vanilla JavaScript frontend, connected to Azure Cosmos DB (MongoDB API).
+Video Link:
+https://bahcesehir-my.sharepoint.com/:v:/g/personal/muhammet_bagci_bahcesehir_edu_tr/IQBadeZ7GOQbQ6q3rGKErbhyAYfjmSjPCqu_871HR5ks2fA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=VJg00l
 
-## 🎯 Quick Start for Professor
+## 🎯 Quick Start for Prof Goksin 👑
 
 The application is **fully deployed and running on Azure**. Follow these simple steps to test it:
 
