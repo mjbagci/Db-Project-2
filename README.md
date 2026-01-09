@@ -219,9 +219,6 @@ The application includes:
 - Toast notifications for user feedback
 - Responsive design for all screen sizes
 
-## License
-
-This project was created for educational purposes.
 
 ## Author
 
