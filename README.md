@@ -1,27 +1,35 @@
-# Bookstore API
+# Bookstore API - Cloud-Native Full-Stack Application
 
-Full-stack web application with Flask REST API backend and vanilla JavaScript frontend, connected to Azure Cosmos DB (MongoDB API).
+Full-stack web application with Flask REST API backend and vanilla JavaScript frontend, connected to Azure Cosmos DB (MongoDB API) and deployed on Azure Kubernetes Service (AKS).
 
 ## 🎯 Quick Start for Professor
 
-**Important:** Due to browser security (HTTPS/HTTP mixed content), please use the local frontend to test the live backend:
+The application is **fully deployed and running on Azure**. Follow these simple steps to test it:
 
+### Step 1: Start Frontend (30 seconds)
 ```bash
-# 1. Clone and start frontend (30 seconds)
 git clone https://github.com/mjbagci/Db-Project-2
 cd Db-Project-2/frontend
 python3 -m http.server 8000
-
-# 2. Open in browser
-# http://localhost:8000
 ```
 
-**Live Backend API (Already Running on AKS):**
-- API Endpoint: `http://172.168.184.222`
-- Health Check: `http://172.168.184.222/health`
-- Books: `http://172.168.184.222/books`
+### Step 2: Open Browser
+Open `http://localhost:8000` in your browser.
 
-The frontend automatically connects to the live Azure backend. No backend setup needed!
+### What You'll See
+- ✅ **9 books** with real cover images
+- ✅ **Search, filter, CRUD operations** all functional
+- ✅ **Modern responsive UI** with real-time updates
+- ✅ **Live Azure backend** (already running on AKS)
+
+### Architecture
+```
+Frontend (localhost:8000) → Backend API (AKS) → Azure Cosmos DB
+                             ↓
+                    http://172.168.184.222
+```
+
+**Note:** The frontend must run locally due to browser security (HTTPS/HTTP mixed content restrictions). The backend is live on Azure and requires no setup.
 
 ## Live Backend API
 
@@ -54,47 +62,57 @@ curl -X POST http://172.168.184.222/books \
   }'
 ```
 
-## Frontend Demo
+## Project Features
 
-**To see the full application with UI:**
+### Backend (Flask REST API)
+- ✅ Full CRUD operations (Create, Read, Update, Delete)
+- ✅ RESTful API design with proper HTTP methods
+- ✅ Nested object support (Author, Publisher)
+- ✅ Health check endpoint
+- ✅ CORS enabled for cross-origin requests
+- ✅ Production-ready with Gunicorn
 
-```bash
-# 1. Clone repository
-git clone https://github.com/mjbagci/Db-Project-2
-cd Db-Project-2/frontend
+### Frontend (Modern Web UI)
+- ✅ Responsive single-page application
+- ✅ Real-time search across title, author, publisher
+- ✅ Category filtering (All, IT, Science Fiction)
+- ✅ Book cover images with Open Library integration
+- ✅ Modal-based forms for add/edit operations
+- ✅ Toast notifications for user feedback
 
-# 2. Start local server
-python3 -m http.server 8000
-
-# 3. Open http://localhost:8000 in your browser
-```
-
-The frontend automatically connects to the live Azure backend. Full functionality with search, filters, and CRUD operations.
-
-## Features
-
-- RESTful API with full CRUD operations
-- Modern responsive frontend interface
-- Real-time search and filtering
-- Azure Cosmos DB cloud database integration
-- Docker containerization support
-- Kubernetes deployment ready
+### Cloud Infrastructure
+- ✅ **Azure Cosmos DB** (MongoDB API) for database
+- ✅ **Azure Kubernetes Service (AKS)** for container orchestration
+- ✅ **Azure Container Registry (ACR)** for Docker images
+- ✅ StatefulSet for MongoDB persistence
+- ✅ Network policies for security
+- ✅ ConfigMaps and Secrets for configuration
 
 ## Tech Stack
 
 **Backend:**
 - Python 3.11
-- Flask 3.0
-- PyMongo 4.6
-- Flask-CORS
+- Flask 3.0 (Web framework)
+- PyMongo 4.6 (MongoDB driver)
+- Flask-CORS 4.0 (Cross-origin support)
+- Gunicorn 21.2 (Production server)
 
 **Frontend:**
-- HTML5, CSS3
-- Vanilla JavaScript
-- Custom gradient design
+- HTML5, CSS3, JavaScript (ES6+)
+- Custom responsive design with gradients
+- Fetch API for async operations
+- No frameworks - vanilla JavaScript
 
 **Database:**
 - Azure Cosmos DB (MongoDB API)
+- 9 books with complete metadata
+
+**Cloud & DevOps:**
+- Azure Kubernetes Service (AKS)
+- Azure Container Registry (ACR)
+- Docker containerization
+- Kubernetes manifests (Deployments, Services, ConfigMaps, Secrets)
+- Network policies for security
 
 ## Quick Start
 
@@ -227,6 +245,19 @@ The application includes:
 - Toast notifications for user feedback
 - Responsive design for all screen sizes
 
+## Deployment Status
+
+🟢 **LIVE AND READY FOR EVALUATION**
+
+| Component | Status | Details |
+|-----------|--------|---------|
+| Backend API | ✅ Running | Azure Kubernetes Service (AKS) |
+| Database | ✅ Connected | Azure Cosmos DB - 9 books loaded |
+| Frontend | ✅ Ready | Clone and run locally (30 seconds) |
+| CORS | ✅ Enabled | Cross-origin requests working |
+| Images | ✅ Loaded | Real book covers from Open Library |
+
+**Test URL:** Clone repo → `cd frontend && python3 -m http.server 8000` → Open `http://localhost:8000`
 
 ## Author
 
