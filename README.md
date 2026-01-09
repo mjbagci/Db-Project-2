@@ -9,6 +9,19 @@ Full-stack web application with Flask REST API backend and vanilla JavaScript fr
 - Health Check: `http://172.168.184.222/health`
 - Books Endpoint: `http://172.168.184.222/books`
 
+**Local Testing:**
+```bash
+# Terminal 1 - Backend
+cd app
+python3 app.py
+# Runs on http://localhost:5001
+
+# Terminal 2 - Frontend
+cd frontend
+python3 -m http.server 8000
+# Runs on http://localhost:8000
+```
+
 ## Live Demo
 
 ### Backend API (Live on AKS)
