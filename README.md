@@ -2,27 +2,33 @@
 
 Full-stack web application with Flask REST API backend and vanilla JavaScript frontend, connected to Azure Cosmos DB (MongoDB API).
 
-> **Note:** Hocam, Due to Azure student account budget limitations ($100), the frontend is configured for local deployment while the backend API runs on AKS. This approach optimizes costs while maintaining full functionality.
+## 🎯 Quick Start for Professor
 
-**Quick Access:**
-- **Live Frontend:** https://mjbagci.github.io/Db-Project-2/
-- **Backend API:** http://172.168.184.222
-- **Health Check:** http://172.168.184.222/health
-- **Books Endpoint:** http://172.168.184.222/books
+**Important:** Due to browser security (HTTPS/HTTP mixed content), please use the local frontend to test the live backend:
 
-**Local Testing:**
-- Backend: http://localhost:5001
-- Frontend: http://localhost:8000
+```bash
+# 1. Clone and start frontend (30 seconds)
+git clone https://github.com/mjbagci/Db-Project-2
+cd Db-Project-2/frontend
+python3 -m http.server 8000
 
-## Live Demo
+# 2. Open in browser
+# http://localhost:8000
+```
 
-### Frontend (Live on GitHub Pages)
-**Access the application:** https://mjbagci.github.io/Db-Project-2/
+**Live Backend API (Already Running on AKS):**
+- API Endpoint: `http://172.168.184.222`
+- Health Check: `http://172.168.184.222/health`
+- Books: `http://172.168.184.222/books`
 
-The frontend automatically connects to the live backend API. No installation required!
+The frontend automatically connects to the live Azure backend. No backend setup needed!
 
-### Backend API (Live on AKS)
-**Deployed and accessible at:** `http://172.168.184.222`
+## Live Backend API
+
+**The backend is live and running on Azure Kubernetes Service (AKS):**
+- Endpoint: `http://172.168.184.222`
+- Health: `http://172.168.184.222/health`
+- Database: Azure Cosmos DB (MongoDB API)
 
 Test the API:
 ```bash
@@ -48,24 +54,22 @@ curl -X POST http://172.168.184.222/books \
   }'
 ```
 
-### Frontend (Local Testing)
-The modern frontend interface can be tested locally:
+## Frontend Demo
+
+**To see the full application with UI:**
 
 ```bash
-# 1. Clone the repository
+# 1. Clone repository
 git clone https://github.com/mjbagci/Db-Project-2
 cd Db-Project-2/frontend
 
 # 2. Start local server
 python3 -m http.server 8000
 
-# 3. Open in browser
-# http://localhost:8000
+# 3. Open http://localhost:8000 in your browser
 ```
 
-The frontend automatically connects to the live backend API at `http://172.168.184.222`.
-
-**Note:** For cost optimization, the frontend is not deployed on AKS. The cluster will be decommissioned after the evaluation period.
+The frontend automatically connects to the live Azure backend. Full functionality with search, filters, and CRUD operations.
 
 ## Features
 

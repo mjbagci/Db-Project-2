@@ -75,16 +75,20 @@ function updateStats() {
 // ===== API Functions =====
 async function fetchBooks() {
     try {
+        console.log('🔍 Fetching books from:', `${API_BASE_URL}/books`);
         showLoading();
         const response = await fetch(`${API_BASE_URL}/books`);
+        console.log('📡 Response status:', response.status);
         if (!response.ok) throw new Error('Failed to fetch books');
         allBooks = await response.json();
+        console.log('📚 Books loaded:', allBooks.length);
         filteredBooks = [...allBooks];
         updateStats();
         renderBooks();
     } catch (error) {
-        console.error('Error fetching books:', error);
-        showToast('Error loading books', 'error');
+        console.error('❌ Error fetching books:', error);
+        console.error('Full error:', error.message, error.stack);
+        showToast('Error loading books: ' + error.message, 'error');
     } finally {
         hideLoading();
     }
